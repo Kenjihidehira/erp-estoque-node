@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP Estoque Node</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <strong>StockERP</strong>
+      <span>Node.js + REST API</span>
+    </nav>
+    <section>
+      <p class="eyebrow">Projeto full-stack</p>
+      <h1>Controle de estoque com dashboard operacional</h1>
+      <p>Cadastre produtos, registre entradas, saídas, ajustes e acompanhe indicadores de estoque em tempo real.</p>
+    </section>
+  </header>
+
+  <main class="layout">
+    <aside class="panel">
+      <p class="eyebrow">Cadastro</p>
+      <h2>Novo produto</h2>
+      <form id="productForm">
+        <label>SKU <input name="sku" required placeholder="EX: MOUSE-PRO" /></label>
+        <label>Nome <input name="name" required placeholder="Mouse Pro" /></label>
+        <label>Categoria <input name="category" required placeholder="Periféricos" /></label>
+        <div class="split">
+          <label>Custo <input name="cost" type="number" min="0" step="0.01" required /></label>
+          <label>Preço <input name="price" type="number" min="0" step="0.01" required /></label>
+        </div>
+        <div class="split">
+          <label>Estoque <input name="stock" type="number" min="0" value="0" /></label>
+          <label>Mínimo <input name="minStock" type="number" min="0" value="0" /></label>
+        </div>
+        <button type="submit">Cadastrar produto</button>
+      </form>
+    </aside>
+
+    <section class="content">
+      <section class="stats" id="stats"></section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Movimentação</p>
+            <h2>Registrar estoque</h2>
+          </div>
+        </div>
+        <form class="movement-form" id="movementForm">
+          <select name="productId" id="movementProduct" required></select>
+          <select name="type">
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+            <option value="ajuste">Ajuste</option>
+          </select>
+          <input name="quantity" type="number" min="0" step="1" placeholder="Quantidade" required />
+          <input name="reason" placeholder="Motivo" />
+          <button type="submit">Salvar</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Produtos</p>
+            <h2>Catálogo em estoque</h2>
+          </div>
+          <label class="check"><input type="checkbox" id="lowStockOnly" /> baixo estoque</label>
+        </div>
+        <div class="filters">
+          <input id="searchInput" type="search" placeholder="Buscar por SKU, nome ou categoria" />
+          <select id="categoryFilter">
+            <option value="">Todas categorias</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Estoque</th>
+                <th>Custo</th>
+                <th>Preço</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="productsTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <p class="eyebrow">Auditoria</p>
+        <h2>Últimas movimentações</h2>
+        <div class="movements" id="movements"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
