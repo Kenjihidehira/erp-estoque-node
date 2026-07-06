@@ -1,0 +1,22 @@
+{
+  "name": "erp-estoque-node",
+  "version": "1.0.0",
+  "description": "Mini ERP de estoque com Node.js puro, API REST, dashboard web e testes.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "node",
+    "erp",
+    "estoque",
+    "api",
+    "fullstack"
+  ],
+  "author": "Kenjihidehira",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
