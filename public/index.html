@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StockPilot ERP</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="/">
+          <span>SP</span>
+          <strong>StockPilot</strong>
+        </a>
+        <nav>
+          <button class="active" type="button">Command Center</button>
+          <button type="button">Replenishment</button>
+          <button type="button">Suppliers</button>
+          <button type="button">Movements</button>
+        </nav>
+        <section class="sidebar-card">
+          <small>Automation readiness</small>
+          <strong id="automationReadiness">Waiting for data</strong>
+          <span>Purchase workflows are simulated and demo-safe.</span>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <header class="hero">
+          <div>
+            <span class="eyebrow">Inventory operations ERP</span>
+            <h1>Stock control with reorder intelligence</h1>
+            <p>Monitor rupture risk, frozen cash, supplier lead time and purchasing actions from one operational cockpit.</p>
+          </div>
+          <div class="hero-actions">
+            <button id="refreshBtn" class="ghost-button" type="button">Refresh data</button>
+            <button id="runAutomationBtn" class="primary-button" type="button">Prepare purchase batch</button>
+          </div>
+        </header>
+
+        <section class="kpi-grid" aria-label="Inventory KPIs">
+          <article class="kpi-card">
+            <span>Total value</span>
+            <strong id="stockValue">--</strong>
+            <small>inventory at cost</small>
+          </article>
+          <article class="kpi-card warning">
+            <span>Risk SKUs</span>
+            <strong id="atRiskCount">--</strong>
+            <small id="criticalCount">critical items</small>
+          </article>
+          <article class="kpi-card">
+            <span>Service level</span>
+            <strong id="serviceLevel">--</strong>
+            <small>above reorder policy</small>
+          </article>
+          <article class="kpi-card accent">
+            <span>Purchase plan</span>
+            <strong id="purchaseValue">--</strong>
+            <small>suggested replenishment</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel">
+            <header class="panel-header">
+              <div>
+                <h2>Reorder command board</h2>
+                <p>Products are ranked by stockout risk and supplier lead time.</p>
+              </div>
+              <div class="filters">
+                <input id="searchInput" type="search" placeholder="Search SKU, product or supplier">
+                <select id="categoryFilter">
+                  <option value="all">All categories</option>
+                </select>
+                <select id="riskFilter">
+                  <option value="all">All risks</option>
+                  <option value="critical">Critical</option>
+                  <option value="high">High</option>
+                  <option value="healthy">Healthy</option>
+                  <option value="overstock">Overstock</option>
+                </select>
+              </div>
+            </header>
+            <div id="productBoard" class="product-board"></div>
+          </article>
+
+          <aside class="panel decision-panel">
+            <header class="panel-header compact">
+              <div>
+                <h2>Purchase queue</h2>
+                <p id="automationLog">No automation sent yet.</p>
+              </div>
+            </header>
+            <div id="purchaseQueue" class="purchase-queue"></div>
+          </aside>
+        </section>
+
+        <section class="panel">
+          <header class="panel-header">
+            <div>
+              <h2>Recent stock movements</h2>
+              <p>Sales, reservations, transfers and inbound operations.</p>
+            </div>
+          </header>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Product</th>
+                  <th>Type</th>
+                  <th>Qty</th>
+                  <th>Date</th>
+                  <th>Channel</th>
+                </tr>
+              </thead>
+              <tbody id="movementBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
