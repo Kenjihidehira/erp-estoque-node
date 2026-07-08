@@ -1,0 +1,158 @@
+{
+  "company": {
+    "name": "StockPilot ERP",
+    "period": "July 2026",
+    "currency": "BRL"
+  },
+  "suppliers": [
+    {
+      "id": "SUP-100",
+      "name": "Distribuidora Norte",
+      "leadTimeDays": 5,
+      "sla": 96,
+      "email": "compras@norte.example"
+    },
+    {
+      "id": "SUP-210",
+      "name": "Atacado Prime",
+      "leadTimeDays": 9,
+      "sla": 91,
+      "email": "pedido@prime.example"
+    },
+    {
+      "id": "SUP-330",
+      "name": "TecParts Brasil",
+      "leadTimeDays": 14,
+      "sla": 87,
+      "email": "supply@tecparts.example"
+    }
+  ],
+  "products": [
+    {
+      "sku": "ELE-1001",
+      "name": "Smart plug Wi-Fi 10A",
+      "category": "Eletronicos",
+      "supplierId": "SUP-330",
+      "stock": 34,
+      "reserved": 18,
+      "reorderPoint": 42,
+      "targetStock": 120,
+      "avgDailySales": 9,
+      "unitCost": 48,
+      "price": 89,
+      "warehouse": "A1"
+    },
+    {
+      "sku": "CAS-2044",
+      "name": "Jogo de panelas inox 5 pecas",
+      "category": "Casa",
+      "supplierId": "SUP-210",
+      "stock": 92,
+      "reserved": 12,
+      "reorderPoint": 45,
+      "targetStock": 110,
+      "avgDailySales": 4,
+      "unitCost": 138,
+      "price": 239,
+      "warehouse": "B2"
+    },
+    {
+      "sku": "PET-8802",
+      "name": "Racao premium 10kg",
+      "category": "Pet",
+      "supplierId": "SUP-100",
+      "stock": 16,
+      "reserved": 7,
+      "reorderPoint": 36,
+      "targetStock": 130,
+      "avgDailySales": 11,
+      "unitCost": 72,
+      "price": 129,
+      "warehouse": "C1"
+    },
+    {
+      "sku": "MOD-4100",
+      "name": "Camiseta dry fit preta",
+      "category": "Moda",
+      "supplierId": "SUP-210",
+      "stock": 240,
+      "reserved": 28,
+      "reorderPoint": 80,
+      "targetStock": 180,
+      "avgDailySales": 6,
+      "unitCost": 22,
+      "price": 59,
+      "warehouse": "D3"
+    },
+    {
+      "sku": "AUT-7711",
+      "name": "Kit lampada LED automotiva",
+      "category": "Auto",
+      "supplierId": "SUP-330",
+      "stock": 21,
+      "reserved": 11,
+      "reorderPoint": 30,
+      "targetStock": 75,
+      "avgDailySales": 5,
+      "unitCost": 64,
+      "price": 119,
+      "warehouse": "A3"
+    },
+    {
+      "sku": "MKT-5520",
+      "name": "Bobina etiqueta termica",
+      "category": "Operacao",
+      "supplierId": "SUP-100",
+      "stock": 11,
+      "reserved": 4,
+      "reorderPoint": 20,
+      "targetStock": 65,
+      "avgDailySales": 3,
+      "unitCost": 31,
+      "price": 52,
+      "warehouse": "E1"
+    }
+  ],
+  "movements": [
+    {
+      "id": "MOV-9001",
+      "sku": "PET-8802",
+      "type": "sale",
+      "quantity": 8,
+      "date": "2026-07-04",
+      "channel": "Marketplace"
+    },
+    {
+      "id": "MOV-9002",
+      "sku": "ELE-1001",
+      "type": "reservation",
+      "quantity": 18,
+      "date": "2026-07-05",
+      "channel": "B2B"
+    },
+    {
+      "id": "MOV-9003",
+      "sku": "CAS-2044",
+      "type": "inbound",
+      "quantity": 40,
+      "date": "2026-07-06",
+      "channel": "Supplier"
+    },
+    {
+      "id": "MOV-9004",
+      "sku": "MOD-4100",
+      "type": "transfer",
+      "quantity": 30,
+      "date": "2026-07-07",
+      "channel": "Store 12"
+    },
+    {
+      "id": "MOV-9005",
+      "sku": "AUT-7711",
+      "type": "sale",
+      "quantity": 6,
+      "date": "2026-07-08",
+      "channel": "E-commerce"
+    }
+  ]
+}
