@@ -12,7 +12,32 @@
     "erp",
     "estoque",
     "api",
-    "fullstack"
+    "fullstack"{
+  "name": "erp-estoque-node",
+  "version": "2.0.0",
+  "description": "Inventory operations ERP with Node.js API, commercial dashboard, reorder intelligence and automated stock actions.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/*.test.js",
+    "smoke": "node tests/smoke.test.js"
+  },
+  "keywords": [
+    "node",
+    "erp",
+    "inventory",
+    "operations",
+    "dashboard",
+    "api"
+  ],
+  "author": "Kenjihidehira",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
+
   ],
   "author": "Kenjihidehira",
   "license": "MIT",
