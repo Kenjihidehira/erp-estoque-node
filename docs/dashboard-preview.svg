@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920" role="img" aria-labelledby="title desc">
+  <title id="title">StockPilot ERP dashboard preview</title>
+  <desc id="desc">Dark sidebar inventory cockpit with KPI cards, reorder command board, purchase queue and stock movement table.</desc>
+  <rect width="1440" height="920" fill="#f3f6f7"/>
+  <rect x="0" y="0" width="268" height="920" fill="#0a171d"/>
+  <g fill="#ffffff">
+    <rect x="24" y="26" width="42" height="42" rx="8" fill="#00a676"/>
+    <text x="37" y="52" font-size="14" font-family="Arial" font-weight="700" fill="#052015">SP</text>
+    <text x="78" y="53" font-size="26" font-family="Arial" font-weight="700">StockPilot</text>
+  </g>
+  <g fill="#10252c">
+    <rect x="18" y="116" width="232" height="44" rx="8"/>
+    <rect x="18" y="170" width="232" height="44" rx="8" opacity=".65"/>
+    <rect x="18" y="224" width="232" height="44" rx="8" opacity=".65"/>
+    <rect x="18" y="278" width="232" height="44" rx="8" opacity=".65"/>
+  </g>
+  <rect x="292" y="24" width="1124" height="150" rx="8" fill="#10252c"/>
+  <text x="322" y="70" font-size="14" font-family="Arial" font-weight="700" fill="#98f5d0">INVENTORY OPERATIONS ERP</text>
+  <text x="322" y="112" font-size="36" font-family="Arial" font-weight="700" fill="#ffffff">Stock control with reorder intelligence</text>
+  <text x="322" y="145" font-size="17" font-family="Arial" fill="#b9cbd2">Monitor rupture risk, frozen cash, supplier lead time and purchase actions.</text>
+  <g>
+    <rect x="292" y="196" width="268" height="118" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+    <rect x="292" y="196" width="5" height="118" fill="#00a676"/>
+    <text x="318" y="232" font-size="13" font-family="Arial" font-weight="700" fill="#62717b">TOTAL VALUE</text>
+    <text x="318" y="276" font-size="31" font-family="Arial" font-weight="700" fill="#172026">R$ 29k</text>
+    <rect x="578" y="196" width="268" height="118" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+    <rect x="578" y="196" width="5" height="118" fill="#e11d48"/>
+    <text x="604" y="232" font-size="13" font-family="Arial" font-weight="700" fill="#62717b">RISK SKUS</text>
+    <text x="604" y="276" font-size="31" font-family="Arial" font-weight="700" fill="#172026">4</text>
+    <rect x="864" y="196" width="268" height="118" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+    <rect x="864" y="196" width="5" height="118" fill="#00a676"/>
+    <text x="890" y="232" font-size="13" font-family="Arial" font-weight="700" fill="#62717b">SERVICE LEVEL</text>
+    <text x="890" y="276" font-size="31" font-family="Arial" font-weight="700" fill="#172026">33%</text>
+    <rect x="1148" y="196" width="268" height="118" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+    <rect x="1148" y="196" width="5" height="118" fill="#2563eb"/>
+    <text x="1174" y="232" font-size="13" font-family="Arial" font-weight="700" fill="#62717b">PURCHASE PLAN</text>
+    <text x="1174" y="276" font-size="31" font-family="Arial" font-weight="700" fill="#172026">R$ 10k</text>
+  </g>
+  <rect x="292" y="338" width="770" height="388" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+  <text x="318" y="382" font-size="22" font-family="Arial" font-weight="700" fill="#172026">Reorder command board</text>
+  <g>
+    <rect x="318" y="418" width="344" height="132" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+    <rect x="318" y="418" width="4" height="132" fill="#e11d48"/>
+    <text x="340" y="448" font-size="13" font-family="Arial" font-weight="700" fill="#62717b">PET-8802</text>
+    <text x="340" y="480" font-size="18" font-family="Arial" font-weight="700" fill="#172026">Racao premium 10kg</text>
+    <rect x="340" y="506" width="286" height="9" rx="4" fill="#e7eef0"/>
+    <rect x="340" y="506" width="20" height="9" rx="4" fill="#00a676"/>
+    <rect x="682" y="418" width="344" height="132" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+    <rect x="682" y="418" width="4" height="132" fill="#e11d48"/>
+    <text x="704" y="448" font-size="13" font-family="Arial" font-weight="700" fill="#62717b">ELE-1001</text>
+    <text x="704" y="480" font-size="18" font-family="Arial" font-weight="700" fill="#172026">Smart plug Wi-Fi 10A</text>
+    <rect x="704" y="506" width="286" height="9" rx="4" fill="#e7eef0"/>
+    <rect x="704" y="506" width="38" height="9" rx="4" fill="#00a676"/>
+    <rect x="318" y="572" width="344" height="132" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+    <rect x="318" y="572" width="4" height="132" fill="#f59e0b"/>
+    <text x="340" y="602" font-size="13" font-family="Arial" font-weight="700" fill="#62717b">AUT-7711</text>
+    <text x="340" y="634" font-size="18" font-family="Arial" font-weight="700" fill="#172026">Kit lampada LED</text>
+    <rect x="682" y="572" width="344" height="132" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+    <rect x="682" y="572" width="4" height="132" fill="#7c3aed"/>
+    <text x="704" y="602" font-size="13" font-family="Arial" font-weight="700" fill="#62717b">MOD-4100</text>
+    <text x="704" y="634" font-size="18" font-family="Arial" font-weight="700" fill="#172026">Camiseta dry fit preta</text>
+  </g>
+  <rect x="1082" y="338" width="334" height="388" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+  <text x="1108" y="382" font-size="22" font-family="Arial" font-weight="700" fill="#172026">Purchase queue</text>
+  <rect x="1108" y="420" width="282" height="86" rx="8" fill="#fff" stroke="#dce4e7"/>
+  <rect x="1108" y="420" width="4" height="86" fill="#e11d48"/>
+  <rect x="1108" y="524" width="282" height="86" rx="8" fill="#fff" stroke="#dce4e7"/>
+  <rect x="1108" y="524" width="4" height="86" fill="#e11d48"/>
+  <rect x="1108" y="628" width="282" height="86" rx="8" fill="#fff" stroke="#dce4e7"/>
+  <rect x="1108" y="628" width="4" height="86" fill="#f59e0b"/>
+  <rect x="292" y="750" width="1124" height="138" rx="8" fill="#ffffff" stroke="#dce4e7"/>
+  <text x="318" y="792" font-size="22" font-family="Arial" font-weight="700" fill="#172026">Recent stock movements</text>
+</svg>
