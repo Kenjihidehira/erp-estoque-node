@@ -1,61 +1,61 @@
-# API Endpoints
+# Endpoints da API
 
-Base URL when running locally:
+URL base ao rodar localmente:
 
 ```text
 http://localhost:3333
 ```
 
-## Health
+## Saúde
 
 `GET /api/health`
 
-Returns service status and version.
+Retorna status do serviço e versão.
 
-## Summary
+## Resumo
 
 `GET /api/summary`
 
-Returns inventory KPIs:
+Retorna KPIs de estoque:
 
-- SKU count
-- Inventory value at cost
-- Service level
-- Risk SKU count
-- Critical SKU count
-- Suggested purchase value
-- Frozen cash in overstock
-- Average days of cover
+- quantidade de SKUs
+- valor do estoque a custo
+- nível de serviço
+- quantidade de SKUs em risco
+- quantidade de SKUs críticos
+- valor sugerido de compra
+- caixa parado em excesso de estoque
+- média de dias de cobertura
 
-## Products
+## Produtos
 
 `GET /api/products`
 
-Optional query parameters:
+Parâmetros opcionais:
 
-- `query`: SKU, product, category or supplier text
-- `category`: product category
-- `risk`: `critical`, `high`, `healthy` or `overstock`
+- `query`: texto de SKU, produto, categoria ou fornecedor
+- `category`: categoria do produto
+- `risk`: `critical`, `high`, `healthy` ou `overstock`
 
-## Movements
+## Movimentações
 
 `GET /api/movements`
 
-Returns recent stock movements enriched with product names.
+Retorna movimentações recentes enriquecidas com nomes de produtos.
 
-## Suppliers
+## Fornecedores
 
 `GET /api/suppliers`
 
-Returns supplier SLA and lead-time data.
+Retorna dados de SLA e prazo dos fornecedores.
 
-## Purchase Suggestions
+## Sugestões de Compra
 
 `GET /api/purchase-suggestions`
 
-Returns products below reorder policy, ranked by stockout risk.
+Retorna produtos abaixo da política de reposição, ordenados por risco de ruptura.
 
-## Automation Simulation
+## Simulação de Automação
 
 `POST /api/automations/run`
 
@@ -67,4 +67,4 @@ Body:
 }
 ```
 
-Returns a demo-safe purchase workflow batch for approval.
+Retorna um lote de fluxo de compra seguro para demonstração e pronto para aprovação.

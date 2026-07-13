@@ -1,7 +1,7 @@
 {
   "company": {
     "name": "StockPilot ERP",
-    "period": "July 2026",
+    "period": "Julho 2026",
     "currency": "BRL"
   },
   "suppliers": [
@@ -136,7 +136,7 @@
       "type": "inbound",
       "quantity": 40,
       "date": "2026-07-06",
-      "channel": "Supplier"
+      "channel": "Fornecedor"
     },
     {
       "id": "MOV-9004",
@@ -144,7 +144,7 @@
       "type": "transfer",
       "quantity": 30,
       "date": "2026-07-07",
-      "channel": "Store 12"
+      "channel": "Loja 12"
     },
     {
       "id": "MOV-9005",

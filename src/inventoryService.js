@@ -72,8 +72,8 @@ export class InventoryService {
         suggestedQty: product.reorderQty,
         estimatedCost: product.reorderQty * product.unitCost,
         reason: product.risk === "critical"
-          ? "Projected stockout before supplier lead time"
-          : "Below reorder policy"
+          ? "Ruptura projetada antes do prazo do fornecedor"
+          : "Abaixo da política de reposição"
       }));
   }
 
@@ -82,7 +82,7 @@ export class InventoryService {
     return {
       sent: suggestions.length,
       totalCost: suggestions.reduce((sum, item) => sum + item.estimatedCost, 0),
-      message: `${suggestions.length} purchase workflows prepared for approval.`,
+      message: `${suggestions.length} fluxos de compra preparados para aprovação.`,
       items: suggestions
     };
   }
@@ -103,7 +103,7 @@ export class InventoryService {
 
       return {
         ...product,
-        supplierName: supplier.name || "Unknown supplier",
+        supplierName: supplier.name || "Fornecedor desconhecido",
         leadTimeDays: supplier.leadTimeDays || 7,
         supplierSla: supplier.sla || 0,
         available,

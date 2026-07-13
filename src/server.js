@@ -33,7 +33,7 @@ function readBody(req) {
       body += chunk;
       if (body.length > 1_000_000) {
         req.destroy();
-        reject(new Error("Payload too large"));
+        reject(new Error("Payload grande demais"));
       }
     });
     req.on("end", () => {
@@ -41,7 +41,7 @@ function readBody(req) {
       try {
         resolve(JSON.parse(body));
       } catch {
-        reject(new Error("Invalid JSON"));
+        reject(new Error("JSON inválido"));
       }
     });
   });
@@ -53,11 +53,11 @@ function serveStatic(req, res) {
   const filePath = path.resolve(publicDir, routePath.replace(/^\/+/, ""));
 
   if (!filePath.startsWith(publicDir)) {
-    return json(res, { error: "Forbidden" }, 403);
+    return json(res, { error: "Proibido" }, 403);
   }
 
   if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
-    return json(res, { error: "Not found" }, 404);
+    return json(res, { error: "Não encontrado" }, 404);
   }
 
   res.writeHead(200, {
@@ -108,7 +108,7 @@ export function createServer() {
       }
 
       if (requestUrl.pathname.startsWith("/api/")) {
-        return json(res, { error: "Route not found" }, 404);
+        return json(res, { error: "Rota não encontrada" }, 404);
       }
 
       return serveStatic(req, res);
@@ -121,6 +121,6 @@ export function createServer() {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 3333);
   createServer().listen(port, () => {
-    console.log(`StockPilot ERP running at http://localhost:${port}`);
+    console.log(`StockPilot ERP rodando em http://localhost:${port}`);
   });
 }

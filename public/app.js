@@ -11,11 +11,20 @@ const money = (value) => new Intl.NumberFormat("pt-BR", {
   maximumFractionDigits: 0
 }).format(value);
 
-const label = (value) => value.replaceAll("_", " ").replace(/\b\w/g, (char) => char.toUpperCase());
+const label = (value) => ({
+  critical: "Crítico",
+  high: "Alto",
+  healthy: "Saudável",
+  overstock: "Excesso",
+  sale: "Venda",
+  reservation: "Reserva",
+  inbound: "Entrada",
+  transfer: "Transferência"
+}[value] || value.replaceAll("_", " ").replace(/\b\w/g, (char) => char.toUpperCase()));
 
 const qs = (selector) => {
   const node = document.querySelector(selector);
-  if (!node) throw new Error(`Missing ${selector}`);
+  if (!node) throw new Error(`Elemento ausente: ${selector}`);
   return node;
 };
 
@@ -28,16 +37,16 @@ async function api(path, options) {
 function renderSummary(summary) {
   qs("#stockValue").textContent = money(summary.stockValue);
   qs("#atRiskCount").textContent = String(summary.atRiskCount);
-  qs("#criticalCount").textContent = `${summary.criticalCount} critical | ${summary.averageCoverDays} avg cover days`;
+  qs("#criticalCount").textContent = `${summary.criticalCount} críticos | ${summary.averageCoverDays} dias médios de cobertura`;
   qs("#serviceLevel").textContent = `${summary.serviceLevel}%`;
   qs("#purchaseValue").textContent = money(summary.purchaseValue);
-  qs("#automationReadiness").textContent = `${summary.movementCount} movements analyzed`;
+  qs("#automationReadiness").textContent = `${summary.movementCount} movimentações analisadas`;
 }
 
 function renderCategoryOptions(categories) {
   const current = state.category;
   qs("#categoryFilter").innerHTML = [
-    `<option value="all">All categories</option>`,
+    `<option value="all">Todas as categorias</option>`,
     ...categories.map((category) => `<option value="${category}">${category}</option>`)
   ].join("");
   qs("#categoryFilter").value = current;
@@ -56,13 +65,13 @@ function renderProducts(products) {
         <i style="width:${Math.min(100, Math.round((product.available / product.targetStock) * 100))}%"></i>
       </div>
       <div class="product-metrics">
-        <div><span>${product.available}</span><small>available</small></div>
-        <div><span>${product.daysOfCover}</span><small>days cover</small></div>
-        <div><span>${product.reorderQty}</span><small>reorder qty</small></div>
+        <div><span>${product.available}</span><small>disponível</small></div>
+        <div><span>${product.daysOfCover}</span><small>dias cobertura</small></div>
+        <div><span>${product.reorderQty}</span><small>qtd reposição</small></div>
       </div>
       <footer>
         <span>${money(product.stockValue)}</span>
-        <small>${product.marginPercent}% margin</small>
+        <small>${product.marginPercent}% margem</small>
       </footer>
     </article>
   `).join("");
@@ -76,13 +85,13 @@ function renderPurchases(suggestions) {
         <b>${label(item.risk)}</b>
       </header>
       <strong>${item.productName}</strong>
-      <small>${item.supplierName} | ${item.leadTimeDays} day lead time</small>
+      <small>${item.supplierName} | ${item.leadTimeDays} dias de prazo</small>
       <div class="queue-metrics">
-        <span>${item.available} available</span>
-        <span>${item.daysOfCover} days</span>
+        <span>${item.available} disponível</span>
+        <span>${item.daysOfCover} dias</span>
       </div>
       <footer>
-        <strong>${item.suggestedQty} units</strong>
+        <strong>${item.suggestedQty} unidades</strong>
         <span>${money(item.estimatedCost)}</span>
       </footer>
     </article>
@@ -129,7 +138,7 @@ async function runAutomation() {
     body: JSON.stringify({ limit: 3 })
   });
   state.automationRuns += result.sent;
-  qs("#automationLog").textContent = `${result.sent} purchase workflows | ${money(result.totalCost)} | ${state.automationRuns} this session`;
+  qs("#automationLog").textContent = `${result.sent} fluxos de compra | ${money(result.totalCost)} | ${state.automationRuns} nesta sessão`;
 }
 
 function bindEvents() {

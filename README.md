@@ -1,68 +1,68 @@
 # ERP Estoque Node
 
-Commercial inventory operations ERP built with Node.js, a REST API, a responsive dashboard and demo-safe automation flows.
+ERP comercial de operações de estoque construído com Node.js, API REST, dashboard responsivo e fluxos de automação seguros para demonstração.
 
-This project is designed as a portfolio system for freelance proposals. It models a real business problem: small retailers lose margin when stockouts, excess inventory and supplier lead times are controlled manually.
+Este projeto foi desenhado como sistema de portfólio para propostas freelance. Ele modela um problema real de negócio: pequenos varejistas perdem margem quando ruptura, excesso de estoque e prazo de fornecedores são controlados manualmente.
 
-## Business Value
+## Valor Comercial
 
-The app helps an operations or purchasing manager:
+O app ajuda um gerente de operações ou compras a:
 
-- Detect SKUs at risk of stockout before supplier lead time expires.
-- Prioritize replenishment by available stock, days of cover and reorder policy.
-- Estimate the cash needed for purchase batches.
-- Monitor inventory value, frozen cash, service level and critical SKUs.
-- Review recent stock movements across sales, reservations, inbound and transfer operations.
-- Simulate purchase workflows without sending real external messages.
+- Detectar SKUs com risco de ruptura antes do prazo de reposição do fornecedor.
+- Priorizar reposição por estoque disponível, dias de cobertura e política de compra.
+- Estimar caixa necessário para lotes de compra.
+- Monitorar valor em estoque, caixa parado, nível de serviço e SKUs críticos.
+- Revisar movimentações recentes de vendas, reservas, entradas e transferências.
+- Simular fluxos de compra sem enviar mensagens externas reais.
 
-## Features
+## Funcionalidades
 
-- Node.js API without external dependencies.
-- Dashboard with KPI cards, reorder board, purchase queue and movements table.
-- Product filtering by search, category and risk level.
-- Supplier lead-time and SLA enrichment.
-- Reorder quantity calculation from stock, reservations, reorder point and target stock.
-- Demo automation endpoint for purchase batch preparation.
-- Seed data in `data/seed.json`.
-- Automated business and smoke tests.
-- Dockerfile for deploy-ready runtime.
+- API Node.js sem dependências externas.
+- Dashboard com KPIs, quadro de reposição, fila de compras e tabela de movimentações.
+- Filtro de produtos por busca, categoria e nível de risco.
+- Enriquecimento por prazo e SLA de fornecedor.
+- Cálculo de quantidade de reposição com base em estoque, reservas, ponto de pedido e estoque alvo.
+- Endpoint de automação demo para preparação de lote de compras.
+- Dados seed em `data/seed.json`.
+- Testes automatizados de regras de negócio e smoke.
+- Dockerfile pronto para deploy.
 
 ## Stack
 
 - Node.js 18+
-- Native `http` server
-- HTML, CSS and JavaScript
-- JSON seed data
+- Servidor `http` nativo
+- HTML, CSS e JavaScript
+- Dados seed em JSON
 - `node:test`
 
-## Run Locally
+## Como Rodar Localmente
 
 ```bash
 npm start
 ```
 
-Open:
+Acesse:
 
 ```text
 http://localhost:3333
 ```
 
-## Tests
+## Testes
 
 ```bash
 npm test
 npm run smoke
 ```
 
-## API Documentation
+## Documentação da API
 
-See:
+Veja:
 
 ```text
 docs/api-endpoints.md
 ```
 
-Main endpoints:
+Principais endpoints:
 
 - `GET /api/health`
 - `GET /api/summary`
@@ -74,7 +74,7 @@ Main endpoints:
 
 ## Preview
 
-Dashboard preview:
+Preview do dashboard:
 
 ```text
 docs/dashboard-preview.svg
@@ -87,11 +87,11 @@ docker build -t erp-estoque-node .
 docker run --rm -p 3333:3333 erp-estoque-node
 ```
 
-## Possible Improvements
+## Melhorias Possíveis
 
-- Add PostgreSQL or SQLite persistence.
-- Add authentication and role-based permissions.
-- Add CSV import/export for product catalog updates.
-- Add supplier email/webhook integration.
-- Add PDF purchase order generation.
-- Add multi-warehouse transfer rules.
+- Adicionar persistência em PostgreSQL ou SQLite.
+- Adicionar autenticação e permissões por perfil.
+- Importar/exportar catálogo de produtos via CSV.
+- Integrar email/webhook de fornecedores.
+- Gerar pedido de compra em PDF.
+- Adicionar regras multiestoque para transferência entre depósitos.

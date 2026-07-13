@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,51 +14,51 @@
           <strong>StockPilot</strong>
         </a>
         <nav>
-          <button class="active" type="button">Command Center</button>
-          <button type="button">Replenishment</button>
-          <button type="button">Suppliers</button>
-          <button type="button">Movements</button>
+          <button class="active" type="button">Central de comando</button>
+          <button type="button">Reposição</button>
+          <button type="button">Fornecedores</button>
+          <button type="button">Movimentações</button>
         </nav>
         <section class="sidebar-card">
-          <small>Automation readiness</small>
-          <strong id="automationReadiness">Waiting for data</strong>
-          <span>Purchase workflows are simulated and demo-safe.</span>
+          <small>Prontidão da automação</small>
+          <strong id="automationReadiness">Aguardando dados</strong>
+          <span>Fluxos de compra são simulados e seguros para demo.</span>
         </section>
       </aside>
 
       <main class="workspace">
         <header class="hero">
           <div>
-            <span class="eyebrow">Inventory operations ERP</span>
-            <h1>Stock control with reorder intelligence</h1>
-            <p>Monitor rupture risk, frozen cash, supplier lead time and purchasing actions from one operational cockpit.</p>
+            <span class="eyebrow">ERP de operações de estoque</span>
+            <h1>Controle de estoque com inteligência de reposição</h1>
+            <p>Monitore risco de ruptura, caixa parado, prazo de fornecedores e ações de compra em um cockpit operacional.</p>
           </div>
           <div class="hero-actions">
-            <button id="refreshBtn" class="ghost-button" type="button">Refresh data</button>
-            <button id="runAutomationBtn" class="primary-button" type="button">Prepare purchase batch</button>
+            <button id="refreshBtn" class="ghost-button" type="button">Atualizar dados</button>
+            <button id="runAutomationBtn" class="primary-button" type="button">Preparar lote de compra</button>
           </div>
         </header>
 
-        <section class="kpi-grid" aria-label="Inventory KPIs">
+        <section class="kpi-grid" aria-label="KPIs de estoque">
           <article class="kpi-card">
-            <span>Total value</span>
+            <span>Valor total</span>
             <strong id="stockValue">--</strong>
-            <small>inventory at cost</small>
+            <small>estoque a custo</small>
           </article>
           <article class="kpi-card warning">
-            <span>Risk SKUs</span>
+            <span>SKUs em risco</span>
             <strong id="atRiskCount">--</strong>
-            <small id="criticalCount">critical items</small>
+            <small id="criticalCount">itens críticos</small>
           </article>
           <article class="kpi-card">
-            <span>Service level</span>
+            <span>Nível de serviço</span>
             <strong id="serviceLevel">--</strong>
-            <small>above reorder policy</small>
+            <small>acima da política de compra</small>
           </article>
           <article class="kpi-card accent">
-            <span>Purchase plan</span>
+            <span>Plano de compra</span>
             <strong id="purchaseValue">--</strong>
-            <small>suggested replenishment</small>
+            <small>reposição sugerida</small>
           </article>
         </section>
 
@@ -66,20 +66,20 @@
           <article class="panel">
             <header class="panel-header">
               <div>
-                <h2>Reorder command board</h2>
-                <p>Products are ranked by stockout risk and supplier lead time.</p>
+                <h2>Quadro de comando de reposição</h2>
+                <p>Produtos são ordenados por risco de ruptura e prazo do fornecedor.</p>
               </div>
               <div class="filters">
-                <input id="searchInput" type="search" placeholder="Search SKU, product or supplier">
+                <input id="searchInput" type="search" placeholder="Buscar SKU, produto ou fornecedor">
                 <select id="categoryFilter">
-                  <option value="all">All categories</option>
+                  <option value="all">Todas as categorias</option>
                 </select>
                 <select id="riskFilter">
-                  <option value="all">All risks</option>
-                  <option value="critical">Critical</option>
-                  <option value="high">High</option>
-                  <option value="healthy">Healthy</option>
-                  <option value="overstock">Overstock</option>
+                  <option value="all">Todos os riscos</option>
+                  <option value="critical">Crítico</option>
+                  <option value="high">Alto</option>
+                  <option value="healthy">Saudável</option>
+                  <option value="overstock">Excesso</option>
                 </select>
               </div>
             </header>
@@ -89,8 +89,8 @@
           <aside class="panel decision-panel">
             <header class="panel-header compact">
               <div>
-                <h2>Purchase queue</h2>
-                <p id="automationLog">No automation sent yet.</p>
+                <h2>Fila de compras</h2>
+                <p id="automationLog">Nenhuma automação enviada ainda.</p>
               </div>
             </header>
             <div id="purchaseQueue" class="purchase-queue"></div>
@@ -100,8 +100,8 @@
         <section class="panel">
           <header class="panel-header">
             <div>
-              <h2>Recent stock movements</h2>
-              <p>Sales, reservations, transfers and inbound operations.</p>
+              <h2>Movimentações recentes de estoque</h2>
+              <p>Vendas, reservas, transferências e entradas.</p>
             </div>
           </header>
           <div class="table-wrap">
@@ -109,11 +109,11 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Product</th>
-                  <th>Type</th>
-                  <th>Qty</th>
-                  <th>Date</th>
-                  <th>Channel</th>
+                  <th>Produto</th>
+                  <th>Tipo</th>
+                  <th>Qtd</th>
+                  <th>Data</th>
+                  <th>Canal</th>
                 </tr>
               </thead>
               <tbody id="movementBody"></tbody>
