@@ -31,7 +31,7 @@
     {
       "sku": "ELE-1001",
       "name": "Smart plug Wi-Fi 10A",
-      "category": "Eletronicos",
+      "category": "Eletrônicos",
       "supplierId": "SUP-330",
       "stock": 34,
       "reserved": 18,
@@ -101,7 +101,7 @@
     {
       "sku": "MKT-5520",
       "name": "Bobina etiqueta termica",
-      "category": "Operacao",
+      "category": "Operação",
       "supplierId": "SUP-100",
       "stock": 11,
       "reserved": 4,

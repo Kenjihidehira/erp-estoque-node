@@ -1,6 +1,6 @@
 # ERP Estoque Node
 
-ERP comercial de operações de estoque construído com Node.js, API REST, dashboard responsivo e fluxos de automação seguros para demonstração.
+ERP comercial de operações de estoque construído com Node.js, API REST, painel responsivo e fluxos de automação seguros para demonstração.
 
 Este projeto foi desenhado como sistema de portfólio para propostas freelance. Ele modela um problema real de negócio: pequenos varejistas perdem margem quando ruptura, excesso de estoque e prazo de fornecedores são controlados manualmente.
 
@@ -18,21 +18,21 @@ O app ajuda um gerente de operações ou compras a:
 ## Funcionalidades
 
 - API Node.js sem dependências externas.
-- Dashboard com KPIs, quadro de reposição, fila de compras e tabela de movimentações.
+- Painel com KPIs, quadro de reposição, fila de compras e tabela de movimentações.
 - Filtro de produtos por busca, categoria e nível de risco.
 - Enriquecimento por prazo e SLA de fornecedor.
 - Cálculo de quantidade de reposição com base em estoque, reservas, ponto de pedido e estoque alvo.
 - Endpoint de automação demo para preparação de lote de compras.
-- Dados seed em `data/seed.json`.
+- Dados de exemplo em `data/seed.json`.
 - Testes automatizados de regras de negócio e smoke.
-- Dockerfile pronto para deploy.
+- Dockerfile pronto para publicação.
 
 ## Stack
 
 - Node.js 18+
 - Servidor `http` nativo
 - HTML, CSS e JavaScript
-- Dados seed em JSON
+- Dados de exemplo em JSON
 - `node:test`
 
 ## Como Rodar Localmente
@@ -72,9 +72,9 @@ Principais endpoints:
 - `GET /api/purchase-suggestions`
 - `POST /api/automations/run`
 
-## Preview
+## Prévia
 
-Preview do dashboard:
+Prévia do painel:
 
 ```text
 docs/dashboard-preview.svg

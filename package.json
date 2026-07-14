@@ -1,7 +1,7 @@
 {
   "name": "erp-estoque-node",
   "version": "2.0.0",
-  "description": "Inventory operations ERP with Node.js API, commercial dashboard, reorder intelligence and automated stock actions.",
+  "description": "ERP de estoque com API Node.js, painel comercial, reposição inteligente e ações automatizadas.",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
